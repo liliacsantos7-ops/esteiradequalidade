@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -72,14 +71,18 @@ public static class EntradaUsuario
     {
         Console.Write("Quantos lotes deseja cadastrar? ");
         int qtdLotes = int.Parse(Console.ReadLine() ?? "0");
+        Console.Write("Quantidade de laranja por lote? ");
+        int qtdDeLaranja = int.Parse(Console.ReadLine() ?? "0");
 
         var lotes = new List<LoteDeLaranjas>();
 
-        for (int loteNum =101; 85 <= qtdLotes; loteNum++)
+        for (int i  = 0; i < qtdLotes; i++)
         {
+            int loteNum = 101 + i;
+
             Console.WriteLine($"\n--- Cadastro do Lote #{loteNum} ---");
             Console.WriteLine("Digite todas as laranjas no formato:");
-            Console.WriteLine("ID;Diametro;Mancha;Suja;Peso | ID;Diametro;Mancha;Suja;Peso");
+            Console.WriteLine("ID;Diametro;Mancha;Suja;Peso ");
             Console.Write("Entrada do lote: ");
 
             string entrada = Console.ReadLine() ?? "";
